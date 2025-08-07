@@ -3,12 +3,17 @@ import Header from "./Components/Header"
 import Section from "./Components/Section"
 import { ProductProvider } from "./context/ProductContext"
 import Product from "./Components/Product"
+import Footer from "./Components/Footer"
 import './App.css'
 import { useRef } from "react"
 const App = () => {
   const productRef = useRef(null);
-   const scrollToMenu = () => {
+  const footerRef = useRef(null);
+  const scrollToMenu = () => {
     productRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+  const scrollToAbout = () => {
+    footerRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
   return (
     <>
@@ -25,6 +30,7 @@ const App = () => {
         </Routes>
         <Section/>
         <Product ref={productRef}/>
+        <Footer ref={footerRef}  onAboutClick={scrollToAbout}/>
       </BrowserRouter>
       </ProductProvider>
       

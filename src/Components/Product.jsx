@@ -20,7 +20,7 @@ const Product = forwardRef((props, ref) => {
     }
     return stars;
   };
-
+  
   return (
     <div ref={ref} className="container w-full bg-gray-100 py-[50px]">
       <h1 className="text-center text-2xl font-bold">All MENU</h1>
